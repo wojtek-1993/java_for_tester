@@ -3,7 +3,6 @@ public class MainApp {
     public static void main(String[] args) {
 
 
-
         model.Bug bug1 = new model.Bug("NullPointerException in the component Document Authentication",
                 "jan_testowy@o2.pl", 3, true);
 

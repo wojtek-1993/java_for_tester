@@ -19,9 +19,9 @@ public class Bug {
     }
 
     public void setDescriptionOfBug(String descriptionOfBug) {
-        if(descriptionOfBug.length() < 10){
+        if (descriptionOfBug.length() < 10) {
             System.out.println("The bug description is less than 10 characters long!");
-        }else{
+        } else {
             this.descriptionOfBug = descriptionOfBug;
         }
 
@@ -32,9 +32,9 @@ public class Bug {
     }
 
     public void setEmailReporter(String emailReporter) {
-        if(emailReporter.contains("@")){
+        if (emailReporter.contains("@")) {
             this.emailReporter = emailReporter;
-        }else{
+        } else {
             System.out.println("Email doesn't contain the @ character!");
 
 
@@ -47,9 +47,9 @@ public class Bug {
     }
 
     public void setPriorityOfBug(int priorityOfBug) {
-        if(priorityOfBug >= 1 && priorityOfBug <= 5){
+        if (priorityOfBug >= 1 && priorityOfBug <= 5) {
             this.priorityOfBug = priorityOfBug;
-        }else{
+        } else {
             System.out.println("The priority of bug isn't in the range from 1 to 5!");
         }
 
