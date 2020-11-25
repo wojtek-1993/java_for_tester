@@ -3,18 +3,28 @@ public class MainApp {
     public static void main(String[] args) {
 
 
-        model.Bug bug1 = new model.Bug("NullPointerException in the component Document Authentication",
-                "jan_testowy@o2.pl", 3, true);
+        int[] numbers = {21,44,10,91,57,20,4,0,5,8,10,50,120,350,400,670};
+        // 0 1 2 3 4 5 6 7 8 9
 
-        bug1.allInformationAboutBug();
-        bug1.setDescriptionOfBug("Null");
-        bug1.setEmailReporter("piotr");
-        bug1.setPriorityOfBug(7);
-        bug1.allInformationAboutBug();
-        //bug1.returnEmailReporter();
-        //bug1.returnStatusOfBug();
-        //int k = bug1.returnPriorityOfBug();
-        //System.out.println(k);
+        int max;
 
+        for(int i = 0; i < numbers.length; i++) {
+            max = numbers[i];
+            for (int j = i + 1; j < numbers.length; j++){
+                if(numbers[j] > max){
+                    max = numbers[j];
+                    numbers[j] = numbers[i];
+                    numbers[i] = max;
+                }
+            }
+        }
+
+        for (int number : numbers) {
+            System.out.println(number);
+        }
     }
+
+
+
+
 }
