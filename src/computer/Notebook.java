@@ -15,7 +15,7 @@ public class Notebook extends Computer {
         if (batteryLevel > 0) {
             super.switchOn();
         } else {
-            System.out.println("Bettery level is too low!");
+            System.out.println("Battery level is too low!");
         }
     }
 
