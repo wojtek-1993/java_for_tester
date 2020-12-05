@@ -8,19 +8,19 @@ public class MainApp {
         PC officeComputer = new PC("Office computer to work", "Dell", 1000, 4096);
         Notebook laptop = new Notebook("Gaming Laptop", "MSI", 2000, 16384, 0);
 
-        laptop.switchOn();
-        System.out.println(laptop.getState());
+        System.out.println(laptop.volumeUp(50));
 
-        laptop.setBatteryLevel(60);
-        laptop.switchOn();
-        System.out.println(laptop.getState());
+        System.out.println(laptop.volumeDown(100));
 
-        officeComputer.switchOn();
-        System.out.println(officeComputer.getState());
+        System.out.println(laptop.volumeUp(6));
+        System.out.println(laptop.volumeDown(7));
 
-        officeComputer.connectTheComputerToElectricity(true);
-        officeComputer.switchOn();
-        System.out.println(officeComputer.getState());
+
+        //System.out.println(officeComputer.volumeUp(10));
+
+        //System.out.println(officeComputer.volumeDown(5));
+        //System.out.println(officeComputer.volumeDown(8));
+        //System.out.println(officeComputer.volumeUp(15));
 
     }
 }

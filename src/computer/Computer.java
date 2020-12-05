@@ -1,12 +1,13 @@
 package computer;
 
-public class Computer {
+abstract public class Computer {
 
     protected String name;
     protected String type;
     protected int hdd;
     protected int ram;
     protected boolean state;
+    protected int volumeLevel;
 
     public Computer(String name, String type, int hdd, int ram) {
         this.name = name;
@@ -61,4 +62,11 @@ public class Computer {
         return state;
     }
 
+    public abstract int volumeUp();
+
+    public abstract int volumeDown();
+
+    public abstract int volumeUp(int volume);
+
+    public abstract int volumeDown(int volume);
 }
