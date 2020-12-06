@@ -1,20 +1,21 @@
+import model.Bug;
+import model.BugReporter;
+
 public class MainApp {
 
     public static void main(String[] args) {
 
 
-        model.Bug bug1 = new model.Bug("NullPointerException in the component Document Authentication",
-                "jan_testowy@o2.pl", 3, true);
 
-        bug1.allInformationAboutBug();
-        bug1.setDescriptionOfBug("Null");
-        bug1.setEmailReporter("piotr");
-        bug1.setPriorityOfBug(7);
-        bug1.allInformationAboutBug();
-        //bug1.returnEmailReporter();
-        //bug1.returnStatusOfBug();
-        //int k = bug1.returnPriorityOfBug();
-        //System.out.println(k);
+        BugReporter bugReporter = new BugReporter("jan", "kowalski", "jan.kowalski");
+        Bug bug1 = new Bug("Server returns error code 500", bugReporter, 6);
 
+        bugReporter.setEmailReporter("jan.nowak");
+
+        System.out.println(bug1);
+
+        bug1.setStatusOfBug(true);
+
+        System.out.println(bug1);
     }
 }
