@@ -11,7 +11,7 @@ public class BugReporter {
     public BugReporter(String firstName, String lastName, String emailReporter) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emailReporter = emailReporter;
+        this.emailReporter = validateEmailReporter(emailReporter);
     }
 
 
@@ -36,10 +36,15 @@ public class BugReporter {
     }
 
     public void setEmailReporter(String emailReporter) {
-        if (emailReporter.contains("@")) {
-            this.emailReporter = emailReporter;
+        this.emailReporter = validateEmailReporter(emailReporter);
+    }
+
+    private String validateEmailReporter(String newEmailReporter) {
+        if (newEmailReporter.contains("@")) {
+            return newEmailReporter;
         } else {
             System.out.println("Email doesn't contain the @ character!");
+            return this.emailReporter;
         }
     }
 
