@@ -19,7 +19,7 @@ public class MainApp {
                 "Grzegorz", "Kolka", "grzegorz.kolka@gmail.com"), 2));
 
         bugs.add(new Bug("Server returns error code 500", new BugReporter(
-                "Paweł", "Malinowski", "pawel.malinowski@onet.pl"), 1));
+                "Krzysztof", "Malinowski", "pawel.malinowski@onet.pl"), 1));
 
         bugs.add(new Bug("File is too large! Server returns error code 1717", new BugReporter(
                 "Krystian", "Kasperski", "krystian.kasperski@interia.pl"), 4));
@@ -27,18 +27,19 @@ public class MainApp {
         bugs.add(new Bug("Server returns error code 401 - unauthorized invalid oauth token", new BugReporter(
                 "Kazimierz", "Walczyk", "kaz.wal@outlook.com"), 3));
 
+        System.out.println("---TreeSet---");
+
         Set<Bug> sortedBug = new TreeSet<>(bugs);
 
         for (Bug bug : sortedBug) {
             System.out.println(bug.getDescriptionOfBug() + " -> " + bug.getBugReporter().getFirstName());
         }
 
-        List<Bug> sortedBugs1 = new ArrayList<>(bugs);
+        System.out.println("---Collection is sorted!---");
 
-        for (Bug bug : sortedBugs1) {
-            Collections.sort(bugs, Comparator.comparing(Bug::getDescriptionOfBug));
-            System.out.println(bug.getDescriptionOfBug() + ".");
-
+        Collections.sort(bugs, Comparator.comparing(Bug::getDescriptionOfBug));
+        for (Bug bug : bugs) {
+            System.out.println(bug);
         }
     }
 }
