@@ -1,15 +1,17 @@
 package computer;
 
+import java.util.Objects;
+
 abstract public class Computer {
 
     protected String name;
     protected String type;
-    protected int hdd;
-    protected int ram;
     protected boolean state;
     protected int volumeLevel;
+    protected Hdd hdd;
+    protected Ram ram;
 
-    public Computer(String name, String type, int hdd, int ram) {
+    public Computer(String name, String type, Hdd hdd, Ram ram) {
         this.name = name;
         this.type = type;
         this.hdd = hdd;
@@ -33,22 +35,6 @@ abstract public class Computer {
         this.type = type;
     }
 
-    public int getHdd() {
-        return hdd;
-    }
-
-    public void setHdd(int hdd) {
-        this.hdd = hdd;
-    }
-
-    public int getRam() {
-        return ram;
-    }
-
-    public void setRam(int ram) {
-        this.ram = ram;
-    }
-
     public void switchOn() {
         System.out.println("PC or Laptop is charged to electricity!");
         state = true;
@@ -69,4 +55,50 @@ abstract public class Computer {
     public abstract int volumeUp(int volume);
 
     public abstract int volumeDown(int volume);
+
+    public Hdd getHdd() {
+        return hdd;
+    }
+
+    public void setHdd(Hdd hdd) {
+        this.hdd = hdd;
+    }
+
+    public Ram getRam() {
+        return ram;
+    }
+
+    public void setRam(Ram ram) {
+        this.ram = ram;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Computer computer = (Computer) o;
+        return state == computer.state &&
+                volumeLevel == computer.volumeLevel &&
+                Objects.equals(name, computer.name) &&
+                Objects.equals(type, computer.type) &&
+                Objects.equals(hdd, computer.hdd) &&
+                Objects.equals(ram, computer.ram);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, type, state, volumeLevel, hdd, ram);
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", state=" + state +
+                ", volumeLevel=" + volumeLevel +
+                ", hdd=" + hdd +
+                ", ram=" + ram +
+                '}';
+    }
 }
