@@ -40,10 +40,10 @@ public class MainApp {
             BufferedWriter output = new BufferedWriter(file);
             output.write(firstnames);
             output.close();
-        } catch (FileAlreadyExistsException ex){
+        } catch (FileAlreadyExistsException ex) {
             ex.printStackTrace();
             System.out.println("The file was created!");
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 
@@ -52,7 +52,7 @@ public class MainApp {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("names.txt"));
 
             String line = bufferedReader.readLine();
-            while (line!=null){
+            while (line != null) {
                 names.add(line);
                 line = bufferedReader.readLine();
             }
@@ -64,9 +64,9 @@ public class MainApp {
                     .findFirst()
                     .orElseThrow(() -> new IllegalStateException("No firstnames start with letter B"));
 
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("The file wasn't found!");
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 
