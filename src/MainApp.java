@@ -41,5 +41,10 @@ public class MainApp {
         for (Bug bug : bugs) {
             System.out.println(bug);
         }
+
+        Bug bug1 = new Bug("The external link to pay returns error code 404",
+                new BugReporter("Karol", "Rat", "karol.rat@gmail.com"), 3);
+
+        bug1.setPriorityOfBug(7);
     }
 }

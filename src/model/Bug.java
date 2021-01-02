@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.IllegalBugPriorityException;
+
 import java.util.Objects;
 
 public class Bug implements ConsoleNotification, Comparable<Bug> {
@@ -41,11 +43,12 @@ public class Bug implements ConsoleNotification, Comparable<Bug> {
         return priorityOfBug;
     }
 
-    public void setPriorityOfBug(int priorityOfBug) {
+    public void setPriorityOfBug(int priorityOfBug) throws IllegalBugPriorityException {
         if (priorityOfBug >= 1 && priorityOfBug <= 5) {
             this.priorityOfBug = priorityOfBug;
         } else {
-            System.out.println("The priority of bug isn't in the range from 1 to 5!");
+            throw new IllegalBugPriorityException("The priority of bug isn't in the range from 1 to 5!" + " " +
+                    "Please provide the number from 1 to 5.");
         }
 
     }
