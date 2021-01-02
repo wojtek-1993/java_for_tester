@@ -7,30 +7,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static enums.Gender.Female;
-import static enums.Gender.Male;
+import static enums.Gender.*;
 
 public class MainApp {
 
     public static void main(String[] args) {
 
         List<User> users = new ArrayList<>();
-        users.add(new User("Jan", "Nowak", "jan.nowak@o2.pl", 28, Male));
-        users.add(new User("Katarzyna", "Przybył", "kasia.przybyl@onet.pl", 39, Female));
-        users.add(new User("Paweł", "Kowalczyk", "pablo.kowalczyk@wp.pl", 40, Male));
-        users.add(new User("Piotr", "Maliniak", "piotr.maliniak@gmail.com", 20, Male));
-        users.add(new User("Mariola", "Kruk", "mariola.kruk@interia.pl", 24, Female));
-        users.add(new User("Grażyna", "Lorek", "grazyna.lorek@wp.pl", 45, Female));
+        users.add(new User("Jan", "Nowak", "jan.nowak@o2.pl", 28, MALE));
+        users.add(new User("Katarzyna", "Przybył", "kasia.przybyl@onet.pl", 39, FEMALE));
+        users.add(new User("Paweł", "Kowalczyk", "pablo.kowalczyk@wp.pl", 40, MALE));
+        users.add(new User("Piotr", "Maliniak", "piotr.maliniak@gmail.com", 20, MALE));
+        users.add(new User("Mariola", "Kruk", "mariola.kruk@interia.pl", 24, FEMALE));
+        users.add(new User("Grażyna", "Lorek", "grazyna.lorek@wp.pl", 45, FEMALE));
 
         List<User> female = users.stream()
-                .filter(user -> user.getGender().equals(Female))
+                .filter(user -> user.getGender().equals(FEMALE))
                 .collect(Collectors.toList());
 
         for (User user : female) {
             System.out.println(user);
         }
 
-        User user = new User("Grzegorz", "Ptak", "grzegorz.ptak@wp.pl", 17, Male);
+        User user = new User("Grzegorz", "Ptak", "grzegorz.ptak@wp.pl", 17, MALE);
         user.setEmail("jan.kruk@wp.ex");
         System.out.println(user.getEmail());
 

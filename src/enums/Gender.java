@@ -2,8 +2,8 @@ package enums;
 
 public enum Gender {
 
-    Female("Woman"),
-    Male("Man");
+    FEMALE("Woman"),
+    MALE("Man");
 
     private String gender;
 
