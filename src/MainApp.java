@@ -15,12 +15,10 @@ public class MainApp {
         System.out.println(laptop.volumeUp(6));
         System.out.println(laptop.volumeDown(7));
 
-
         //System.out.println(officeComputer.volumeUp(10));
 
         //System.out.println(officeComputer.volumeDown(5));
         //System.out.println(officeComputer.volumeDown(8));
         //System.out.println(officeComputer.volumeUp(15));
-
     }
 }
